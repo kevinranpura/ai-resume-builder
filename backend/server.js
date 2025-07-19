@@ -7,11 +7,7 @@ const router = require('./routes/resumeRoutes.js')
 
 
 
-app.use(cors({
-  origin: 'https://ai-resume-builder-kevins-projects-1bc07b22.vercel.app/',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  credentials: true
-}))
+app.use(cors())
 
 app.use(express.json())
 
