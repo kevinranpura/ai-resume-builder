@@ -40,7 +40,7 @@ const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
 ReactDOM.createRoot(root).render(
   <StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY} frontendApi={import.meta.env.VITE_CLERK_FRONTEND_API} afterSignOutUrl="/">
       <ResumeProvider>
         <RouterProvider router={router} />
       </ResumeProvider>
