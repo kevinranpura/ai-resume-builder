@@ -5,11 +5,11 @@ import App from './App.jsx'
 import { ClerkProvider } from '@clerk/clerk-react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ReactDOM from "react-dom/client";
-import Index from '../auth/sign-in/Index.jsx'
+import Index from '../auth/sign-in/Index'
 import Home from '../pages/Home.jsx'
-import Dashboard from '../pages/Dashboard.jsx'
-import EditResume from '../pages/edit/[id]/EditResume.jsx'
-import { ResumeProvider } from '../context/ResumeContext.jsx'
+import Dashboard from '../pages/Dashboard'
+import EditResume from '../pages/edit/[id]/EditResume'
+import { ResumeProvider } from '../context/ResumeContext'
 
 
 const router = createBrowserRouter([
