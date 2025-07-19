@@ -83,7 +83,7 @@ const EditResume = () => {
   const getbyid = async () => {
     try {
       console.log("id is: ", id);
-      const res = await fetch("http://localhost:3000/api/resumes/getById", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/resumes/getById`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -134,7 +134,7 @@ const EditResume = () => {
 
   const updateresume = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/api/resumes/update/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/resumes/update/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -176,7 +176,7 @@ const EditResume = () => {
   const deleteresume = async () => {
 
     try {
-      const response = await fetch(`http://localhost:3000/api/resumes/delete/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/resumes/delete/${id}`, {
         method: "DELETE"
       });
 

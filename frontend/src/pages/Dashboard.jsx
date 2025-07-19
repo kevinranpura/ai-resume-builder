@@ -18,7 +18,7 @@ const Dashboard = () => {
     try {
       // console.log(email);
 
-      const res = await fetch("http://localhost:3000/api/resumes/getResumes", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/resumes/getResumes`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
