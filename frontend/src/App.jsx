@@ -1,26 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
 import './App.css'
-import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from "@clerk/clerk-react";
 import { Navigate, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase';
 import { ToastContainer } from 'react-toastify';
 
 
 function App() {
-  const [count, setCount] = useState(0)
-  const {user, isSignedIn, isLoaded} = useUser()
+  const [user, setuser] = useState(null)
+  const [ loading, setloading ] = useState(true)
 
-  if(!isSignedIn && isLoaded){
-    return <Navigate to={"auth/sign-in/"}/>
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (firebaseUser) => {
+      setuser(firebaseUser);
+      setloading(false);
+    });
+    return () => unsub();
+  }, []);
+
+
+  if (!user && !loading) {
+    return <Navigate to={"auth/sign-in/"} />
   }
 
   return (
-    <> 
-      <Navbar/>
-      <Outlet/>  
-      <ToastContainer/>
+    <>
+      <Navbar user={user} />
+      <Outlet />
+      <ToastContainer />
     </>
   )
 }

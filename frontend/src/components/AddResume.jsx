@@ -1,13 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
-import { useUser } from '@clerk/clerk-react'
 import { useNavigate } from 'react-router-dom'
+import { useUser } from '../context/UserContext'
 
 const AddResume = () => {
 
   const navigate = useNavigate()
   const { user } = useUser()
-  const primaryemail = user?.primaryEmailAddress?.emailAddress
+  const primaryemail = user?.email
   const username = user?.username || user?.fullName
   const [modal, setmodal] = useState(false)
   const [title, settitle] = useState("")

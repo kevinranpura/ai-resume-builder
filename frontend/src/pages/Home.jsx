@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import { Navigate } from 'react-router-dom'
-import { UserButton, useUser } from '@clerk/clerk-react'
+
 
 
 
