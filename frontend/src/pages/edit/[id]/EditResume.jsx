@@ -55,9 +55,9 @@ const EditResume = () => {
 
 
   const templates = [
-    { id: "classic", thumbnail: "/src/templates/classic.png" },
-    { id: "modern", thumbnail: "/src/templates/modern.png" },
-    { id: "template3", thumbnail: "/src/templates/template3.png" },
+    { id: "classic", thumbnail: "/templates/classic.png" },
+    { id: "modern", thumbnail: "/templates/modern.png" },
+    { id: "template3", thumbnail: "/templates/template3.png" },
   ];
 
   const themes = [
