@@ -2,16 +2,13 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useUser } from '../context/UserContext'
-import { getAuth } from "firebase/auth";
 
 
 const AddResume = () => {
-
   const navigate = useNavigate()
   const { user } = useUser()
-  const auth = getAuth()
   const primaryemail = user?.email
-  const username = auth.currentUser.displayName
+  const username = user?.displayName
   const [modal, setmodal] = useState(false)
   const [title, settitle] = useState("")
 
