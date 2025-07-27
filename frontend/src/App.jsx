@@ -21,7 +21,7 @@ function App() {
 
 
   if (!user && !loading) {
-    return <Navigate to={"auth/sign-in/"} />
+    return <Navigate to={"/"} />
   }
 
   return (
