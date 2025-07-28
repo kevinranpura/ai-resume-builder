@@ -241,7 +241,7 @@ const EditResume = () => {
             </button>
 
             <div id="default-modal" tabIndex="-1" aria-hidden="true" className={` ${showoptions ? "" : "hidden"} fixed inset-0 z-50 flex justify-center bg-black/77`}>
-              <div className="w-[95%] md:w-[80%] bg-white my-auto h-[90%] ">
+              <div className="w-[95%] md:w-[80%] bg-white my-auto h-[90%] overflow-auto rounded-lg pb-5 ">
                 <div className="flex items-center justify-between p-4 md:p-5 border-b border-gray-500">
                   <h3 className="text-xl font-semibold text-black ">
                     Change Theme
@@ -276,14 +276,14 @@ const EditResume = () => {
                         <div
                           key={index}
                           onClick={() => { setselectedtemplate(template.id), handleselect(index) }}
-                          className={`${selectedindex === index ? "border-3 border-purple-400" : "border-gray-200"} w-45 md:w-90 border-2 border-gray-300 rounded-lg hover:shadow-lg cursor-pointer`}
+                          className={`${selectedindex === index ? "border-3 border-purple-400" : "border-gray-200"} w-39 md:w-90 border-2 border-gray-300 rounded-lg hover:shadow-lg cursor-pointer`}
                         >
                           <img className='rounded-lg' src={template.thumbnail} alt="" />
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <div className="grid grid-cols-2 md:grid-cols-3 justify-center items-center w-90 md:w-180 lg:w-250 md:h-110 gap-x-10 md:gap-x-20 gap-y-15 mx-auto overflow-auto">
+                    <div className="grid grid-cols-2 md:grid-cols-3 justify-center items-center w-80 md:w-180 lg:w-250 md:h-110 gap-x-10 md:gap-x-20 gap-y-15 mx-auto overflow-y-auto">
                       {themes.map((theme, index) => (
                         <div
                           key={index}
@@ -305,24 +305,24 @@ const EditResume = () => {
               Delete
             </button>
 
-            <div id="popup-modal" tabindex="-1" class={`${showdelete ? "" : "hidden"} flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-15 z-50 justify-center w-80 md:w-full md:inset-0 h-[calc(100%-1rem)] max-h-full`}>
-              <div class="items-center p-4 w-full max-w-md max-h-full">
-                <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
-                  <button onClick={() => setshowdelete(!showdelete)} type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
-                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+            <div id="popup-modal" tabIndex="-1" className={`${showdelete ? "" : "hidden"} flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 mx-[27px] md:mx-0 z-50 justify-center w-80 md:w-full md:inset-0 h-[calc(100%-1rem)]`}>
+              <div className="items-center p-4 w-full max-w-md max-h-full">
+                <div className="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                  <button onClick={() => setshowdelete(!showdelete)} type="button" className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
+                    <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
                     </svg>
-                    <span class="sr-only">Close modal</span>
+                    <span className="sr-only">Close modal</span>
                   </button>
-                  <div class="p-4 md:p-5 text-center">
-                    <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                  <div className="p-4 md:p-5 text-center">
+                    <svg className="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
-                    <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this resume?</h3>
-                    <button onClick={deleteresume} data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
+                    <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this resume?</h3>
+                    <button onClick={deleteresume} data-modal-hide="popup-modal" type="button" className="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
                       Yes, I'm sure
                     </button>
-                    <button onClick={() => setshowdelete(!showdelete)} data-modal-hide="popup-modal" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">No, cancel</button>
+                    <button onClick={() => setshowdelete(!showdelete)} data-modal-hide="popup-modal" type="button" className="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">No, cancel</button>
                   </div>
                 </div>
               </div>
@@ -377,13 +377,13 @@ const EditResume = () => {
           </div>
         </div>
 
-        <div class="block md:hidden flex items-center py-3 px-3 text-sm text-yellow-600 border-3 border-dashed border-yellow-300 rounded-lg bg-yellow-100" role="alert">
-          <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+        <div className="block md:hidden flex items-center py-3 px-3 text-sm text-yellow-600 border-3 border-dashed border-yellow-300 rounded-lg bg-yellow-100" role="alert">
+          <svg className="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
             <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
           </svg>
-          <span class="sr-only">Info</span>
+          <span className="sr-only">Info</span>
           <div>
-            <span class="font-medium">This site is optimized for laptop/desktop screens. Preview may appear slightly misaligned on mobile devices, but don't worry — your downloaded resume will look perfectly formatted.</span>
+            <span className="font-medium">This site is optimized for laptop/desktop screens. Preview may appear slightly misaligned on mobile devices, but don't worry — your downloaded resume will look perfectly formatted.</span>
           </div>
         </div>
 
