@@ -305,7 +305,7 @@ const EditResume = () => {
               Delete
             </button>
 
-            <div id="popup-modal" tabIndex="-1" className={`${showdelete ? "" : "hidden"} flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 mx-[27px] md:mx-0 z-50 justify-center w-80 md:w-full md:inset-0 h-[calc(100%-1rem)]`}>
+            <div id="popup-modal" tabIndex="-1" className={`${showdelete ? "" : "hidden"} flex overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 mx-[30px] md:mx-0 z-50 justify-center w-80 md:w-full md:inset-0 h-[calc(100%-1rem)]`}>
               <div className="items-center p-4 w-full max-w-md max-h-full">
                 <div className="relative bg-gray-500 rounded-lg shadow-sm">
                   <button onClick={() => setshowdelete(!showdelete)} type="button" className="absolute top-3 end-2.5 text-white bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center " data-modal-hide="popup-modal">
