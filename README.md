@@ -28,7 +28,7 @@ AI Resume Builder is a web-based application that allows users to effortlessly c
 1. Clone the repository
 
 ```bash
-  git clone https://github.com/kevin-ranpura/ai-resume-builder.git
+  git clone https://github.com/kevinranpura/ai-resume-builder.git
   cd ai-resume-builder
 ```
 2. Install Dependencies
@@ -56,5 +56,5 @@ For Backend:
     
 ## Authors
 
-- [Kevin Ranpura](https://www.github.com/kevin-ranpura)
+- [Kevin Ranpura](https://www.github.com/kevinranpura)
 
